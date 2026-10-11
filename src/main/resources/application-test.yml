@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/planet_test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME:planet}
+    password: ${DB_PASSWORD:planet-local-password}
+  data:
+    redis:
+      database: ${REDIS_DATABASE:2}
+
+app:
+  redis:
+    key-prefix: ${REDIS_KEY_PREFIX:planet:test:}
+
+planet:
+  storage:
+    secret-key: ${PLANET_STORAGE_SECRET_KEY:test-planet-storage-key-000001}
+
+sa-token:
+  jwt-secret-key: ${JWT_SECRET_KEY:test-planet-jwt-key-0000000001}
